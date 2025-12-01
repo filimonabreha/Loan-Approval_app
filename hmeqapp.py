@@ -3,7 +3,17 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import sklearn
+import numpy as np
+
+# Import the sklearn pieces that were used in the pipeline
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.linear_model import LogisticRegression
+
+# Load the trained pipeline model
+with open("my_model.pkl", "rb") as file:
+    model = pickle.load(file)
 
 # Load the trained model
 # --- Put the Model in Drive First---
